@@ -1,43 +1,40 @@
 {
-    "private": true,
-    "workspaces": [
-      "packages/*"
-    ],
-    "scripts": {
-      "build": "cd packages/react-scripts && node bin/react-scripts.js build",
-      "changelog": "lerna-changelog",
-      "create-react-app": "node tasks/cra.js",
-      "e2e": "tasks/e2e-simple.sh",
-      "e2e:docker": "tasks/local-test.sh",
-      "postinstall": "cd packages/react-error-overlay/ && yarn build:prod",
-      "publish": "tasks/publish.sh",
-      "start": "cd packages/react-scripts && node bin/react-scripts.js start",
-      "screencast": "node ./tasks/screencast.js",
-      "screencast:error": "svg-term --cast jyu19xGl88FQ3poMY8Hbmfw8y --out screencast-error.svg --window --at 12000 --no-cursor",
-      "test": "cd packages/react-scripts && node bin/react-scripts.js test --env=jsdom",
-      "format": "prettier --trailing-comma es5 --single-quote --write 'packages/*/*.js' 'packages/*/!(node_modules)/**/*.js'",
-      "precommit": "lint-staged"
-    },
-    "devDependencies": {
-      "eslint": "4.19.1",
-      "execa": "^0.10.0",
-      "husky": "^0.14.3",
-      "lerna": "2.9.1",
-      "lerna-changelog": "^0.7.0",
-      "lint-staged": "^7.0.5",
-      "meow": "^4.0.0",
-      "multimatch": "^2.1.0",
-      "prettier": "1.12.1",
-      "svg-term-cli": "^2.1.1",
-      "tempy": "^0.2.1"
-    },
-    "lint-staged": {
-      "*.js": [
-        "prettier --trailing-comma es5 --single-quote --write",
-        "git add"
-      ],
-      "yarn.lock": [
-        "git rm --cached"
-      ]
-    }
+  "name": "create-react-app-redux",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.0",
+    "prettier": "^1.11.0",
+    "react-scripts": "^1.0.17"
+  },
+  "dependencies": {
+    "primeicons": "^1.0.0-beta.9",
+    "primereact": "^1.6.2",
+    "react": "^16.2.0",
+    "react-bootstrap": "^0.32.1",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^5.0.0-alpha.9",
+    "redux": "^3.7.2",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-thunk": "^2.2.0",
+    "sanitize.css": "^5.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "precommit": "lint-staged"
+  },
+  "homepage": "https://cra-redux-router-thunk.herokuapp.com",
+  "lint-staged": {
+    "*.{js,json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
   }
+}
